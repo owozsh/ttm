@@ -1,8 +1,13 @@
+
+/****** GLOBAL ******/
+
 * {
 	padding: 0;
 	margin:  0;
 	box-sizing: border-box;
 }
+
+/****** TEXT ******/
 
 .column_header {
 	color: #FFF;
