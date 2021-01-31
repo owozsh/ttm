@@ -13,6 +13,9 @@
 	color: #FFF;
 	font-size: 36px;
 	margin-bottom: 30px;
+
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier();
 }
 
 .time {
@@ -34,14 +37,19 @@
 	padding: 40px 0 40px 40px;
 	background-color: #000;
 
+	overflow: auto;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier();
 } .column:last-of-type {
 	padding: 40px;
 }
 
-.row {
+.item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -57,14 +65,20 @@
 	font-size: 18px;
 	background-color: #FFF;
 	cursor: grab;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier();
 }
 
-.row:last-of-type {
+.item:last-of-type {
 	margin-bottom: 0;
 }
 
-.s {
+.schedule {
 	padding: 20px 40px;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+}
+
+.selected {
+	text-shadow: 0 0 20px #FFFFFF;
 }
