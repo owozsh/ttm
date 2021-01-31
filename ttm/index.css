@@ -34,8 +34,7 @@
 .column {
 	width: 100%;
 	height: calc(100%);
-	padding: 40px 0 40px 40px;
-	background-color: #000;
+	padding: 40px;
 
 	overflow: auto;
 
@@ -46,7 +45,9 @@
 	transition-duration: 0.3s;
 	transition-timing-function: cubic-bezier();
 } .column:last-of-type {
-	padding: 40px;
+	margin-right: 20px;
+} .column:first-of-type {
+	margin-left: 20px;
 }
 
 .item {
@@ -56,7 +57,7 @@
 	justify-content: center;
 
 	padding: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 
 	height: 100%;
 	width: 100%;
@@ -65,7 +66,7 @@
 	font-size: 18px;
 	background-color: #FFF;
 	cursor: grab;
-	transition-duration: 0.3s;
+	transition-duration: 0.15s;
 	transition-timing-function: cubic-bezier();
 }
 
@@ -79,6 +80,10 @@
 	justify-content: space-around;
 }
 
-.selected {
+.column_selected {
 	text-shadow: 0 0 20px #FFFFFF;
+}
+
+.item_selected {
+	box-shadow: 0 0 20px #FFFFFF;
 }
