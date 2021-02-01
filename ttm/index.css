@@ -11,8 +11,10 @@
 
 .column_header {
 	color: #FFF;
-	font-size: 36px;
+	font-size: 24px;
 	margin-bottom: 30px;
+	padding: 10px 40px;
+	border-radius: 7px;
 
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier();
@@ -83,9 +85,12 @@
 /****** SELECTION ******/
 
 .column_selected {
-	text-shadow: 0 0 20px #FFFFFF;
+	color: #000;
+	box-shadow: 0 5px red;
+	background-color: #FFF;
 }
 
 .item_selected {
-	box-shadow: 0 0 20px #FFFFFF;
+	transform: translate(0, -5px);
+	box-shadow: 0 5px red;
 }

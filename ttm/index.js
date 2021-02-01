@@ -37,6 +37,8 @@ const select = (column, item) => {
     }
 
     //---> item selector
+    console.log(columns[selected_column].children.length);
+    if (columns[selected_column].children.length == 1) items.forEach(element => element.classList.remove('item_selected'));
     if (item == 0) item++; // skip column's h2 child
     const column_items = columns[selected_column].children; // creates a list with the selected column's items
     if (item < column_items.length && item > 0) {
@@ -110,6 +112,9 @@ const removeColumn = () => {
     updateLists();
     select(selected_column, selected_item - 1);
 }
+
+updateLists();
+select(0,0);
 
 //___KEY BINDINGS
 document.onkeyup = (event) => {
