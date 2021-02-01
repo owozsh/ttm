@@ -1,3 +1,6 @@
+let content = document.querySelector('body');
+if (localStorage.getItem('content')) content.innerHTML = localStorage.getItem('content');
+
 const view = document.querySelector('.view');
 let columns = document.querySelectorAll('.column');
 let column_headers = document.querySelectorAll('.column_header');
@@ -105,4 +108,6 @@ document.onkeyup = (event) => {
         case 'H': ; break; //--> Move Column Left
         case 'L': ; break; //--> Move Column Right
     }
+
+    localStorage.setItem('content', content.innerHTML);
 }
