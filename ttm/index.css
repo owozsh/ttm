@@ -23,6 +23,8 @@
 	color: red;
 }
 
+/****** ELEMENTS ******/
+
 .view {
 	height: 100vh;
 	display: flex;
@@ -68,9 +70,7 @@
 	cursor: grab;
 	transition-duration: 0.15s;
 	transition-timing-function: cubic-bezier();
-}
-
-.item:last-of-type {
+} .item:last-of-type {
 	margin-bottom: 0;
 }
 
@@ -79,6 +79,8 @@
 	flex-direction: row;
 	justify-content: space-around;
 }
+
+/****** SELECTION ******/
 
 .column_selected {
 	text-shadow: 0 0 20px #FFFFFF;

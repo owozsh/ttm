@@ -1,36 +1,44 @@
+//___LOAD SAVED CONTENT
 let content = document.querySelector('body');
 if (localStorage.getItem('content')) content.innerHTML = localStorage.getItem('content');
 
-const view = document.querySelector('.view');
+//___GLOBAL VALUES
+let view = document.querySelector('.view');
 let columns = document.querySelectorAll('.column');
 let column_headers = document.querySelectorAll('.column_header');
 let items = document.querySelectorAll('.item');
 
 let selected_column = 0, selected_item = 0;
 
-//______AUX
+//___AUX
+//---> creates an element with classes
 const createElementExt = (element_type, classes) => {
     const element = document.createElement(element_type);
     element.classList.add(...classes);
     return element;
 }
 
+//---> update column's and item's lists
 const updateLists = () => {
+    view = document.querySelector('.view');
     columns = document.querySelectorAll('.column');
     column_headers = document.querySelectorAll('.column_header');
     items = document.querySelectorAll('.item');
 }
 
+//---> handle selection of columns/items
 const select = (column, item) => {
 
+    //---> column selector
     if (column < columns.length && column >= 0) {
         selected_column = column;
         column_headers.forEach(element => element.classList.remove('column_selected'));
         column_headers[selected_column].classList.add('column_selected');
     }
 
-    if (item == 0) item++;
-    const column_items = columns[selected_column].children;
+    //---> item selector
+    if (item == 0) item++; // skip column's h2 child
+    const column_items = columns[selected_column].children; // creates a list with the selected column's items
     if (item < column_items.length && item > 0) {
         selected_item = item;
         items.forEach(element => element.classList.remove('item_selected'));
@@ -69,12 +77,15 @@ const addItem = (schedule) => {
 
 //___MOVE ITEM
 const swap = (direction) => {
+
+    //---> swap the selected item with the item below
     if (direction == 0 && selected_item + 1 < columns[selected_column].children.length) {
         columns[selected_column].children[selected_item + 1].parentNode.insertBefore(columns[selected_column].children[selected_item + 1], columns[selected_column].children[selected_item]);
         updateLists();
         select(selected_column, selected_item + 1);
     }
 
+    //---> swap the selected item with the item above
     if (direction == 1 && selected_item - 1 > 0) {
         columns[selected_column].children[selected_item].parentNode.insertBefore(columns[selected_column].children[selected_item], columns[selected_column].children[selected_item - 1]);
         updateLists();
@@ -84,7 +95,7 @@ const swap = (direction) => {
 
 //___REMOVE
 const removeItem = () => {
-    if (columns[selected_column].children.length == 1) return;
+    if (columns[selected_column].children.length == 1) return; // stops the function if there is no item to remove
 
     columns[selected_column].removeChild(columns[selected_column].children[selected_item]);
 
@@ -93,11 +104,14 @@ const removeItem = () => {
 }
 
 const removeColumn = () => {
+    if (columns.length == 0) return; // stops the function if there is no column to remove
+
     view.removeChild(columns[selected_column]);
     updateLists();
     select(selected_column, selected_item - 1);
 }
 
+//___KEY BINDINGS
 document.onkeyup = (event) => {
     switch (event.key) {
         case 'A': addItem(true); break; //--> New Scheduled Item
@@ -116,5 +130,5 @@ document.onkeyup = (event) => {
         case 'L': ; break; //--> Move Column Right
     }
 
-    localStorage.setItem('content', content.innerHTML);
+    localStorage.setItem('content', content.innerHTML); //---> send the page's state to the Local Storage on every change
 }
