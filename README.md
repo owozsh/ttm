@@ -8,6 +8,7 @@ TTM is a simple tiling task manager that uses vim/calcurse key bindings.
 - a -> add item
 - A -> add scheduled item
 - d -> remove item
+- D -> remove column
 - j -> select below item
 - k -> select above item
 - l -> select next column
