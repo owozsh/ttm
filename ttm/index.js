@@ -92,6 +92,12 @@ const removeItem = () => {
     select(selected_column, selected_item - 1);
 }
 
+const removeColumn = () => {
+    view.removeChild(columns[selected_column]);
+    updateLists();
+    select(selected_column, selected_item - 1);
+}
+
 document.onkeyup = (event) => {
     switch (event.key) {
         case 'A': addItem(true); break; //--> New Scheduled Item
@@ -99,6 +105,7 @@ document.onkeyup = (event) => {
         case 'n': addColumn(); break; //--> New Column
         case 'e': ; break; //--> Edit Item
         case 'd': removeItem(); break; //--> Delete Item
+        case 'D': removeColumn(); break; //--> Delete Item
         case 'j': select(selected_column, selected_item + 1); break; //--> Item Down
         case 'k': select(selected_column, selected_item - 1); break; //--> Item Up
         case 'l': select(selected_column + 1, 0); break; //--> Column Right
