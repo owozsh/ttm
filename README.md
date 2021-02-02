@@ -22,11 +22,10 @@ Start by adding a new column (press n), and then you can add you items (press a)
 - J -> swap below item
 - K -> swap above item
 
-###
-
 ### Roadmap
 
 - [ ] mouse support
 - [ ] workspaces
+- [ ] themes
 - [ ] responsiviness
 - [ ] schedule notification
