@@ -2,7 +2,7 @@
 
 ![ttm's screenshot](./media/screenshot.png)
 
-TTM is a simple tiling task manager that uses vim/calcurse key bindings. You can access it right [here](https://owozsh.github.io/ttm/index.html). A black screen is expected to appear, follow the tutorial below to learn how to use it :)
+TTM is a simple tiling task manager that uses vim/calcurse key bindings. You can access it right [here](https://owozsh.github.io/ttm/). A black screen is expected to appear, follow the tutorial below to learn how to use it :)
 
 ### Tutorial
 
