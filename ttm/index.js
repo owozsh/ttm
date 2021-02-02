@@ -37,14 +37,16 @@ const select = (column, item) => {
     }
 
     //---> item selector
-    console.log(columns[selected_column].children.length);
-    if (columns[selected_column].children.length == 1) items.forEach(element => element.classList.remove('item_selected'));
-    if (item == 0) item++; // skip column's h2 child
-    const column_items = columns[selected_column].children; // creates a list with the selected column's items
-    if (item < column_items.length && item > 0) {
-        selected_item = item;
-        items.forEach(element => element.classList.remove('item_selected'));
-        column_items[selected_item].classList.add('item_selected');
+    let column_items;
+    if (columns[selected_column]) {
+        if (columns[selected_column].children.length == 1) items.forEach(element => element.classList.remove('item_selected'));
+        if (item == 0) item++; // skip column's h2 child
+        column_items = columns[selected_column].children; // creates a list with the selected column's items
+        if (item < column_items.length && item > 0) {
+            selected_item = item;
+            items.forEach(element => element.classList.remove('item_selected'));
+            column_items[selected_item].classList.add('item_selected');
+        }
     }
 }
 
