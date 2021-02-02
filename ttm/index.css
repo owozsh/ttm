@@ -41,7 +41,7 @@
 	width: 100%;
 	min-width: 300px;
 	height: calc(100%);
-	padding: 40px;
+	padding: 15px;
 	overflow: auto;
 
 	display: flex;
@@ -63,7 +63,7 @@
 	justify-content: center;
 
 	padding: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 
 	height: 100%;
 	width: 100%;
