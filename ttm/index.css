@@ -41,7 +41,7 @@
 	width: 100%;
 	min-width: 300px;
 	height: calc(100%);
-	padding: 15px;
+	padding: 40px 15px;
 	overflow: auto;
 
 	display: flex;
