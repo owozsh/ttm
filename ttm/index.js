@@ -112,7 +112,7 @@ const removeColumn = () => {
 
     view.removeChild(columns[selected_column]);
     updateLists();
-    select(selected_column, selected_item - 1);
+    select(selected_column == 0 ? selected_column : selected_column - 1, selected_item - 1);
 }
 
 updateLists();
