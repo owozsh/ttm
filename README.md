@@ -1,5 +1,7 @@
 # TTM
 
+![ttm's screenshot](./media/screenshot.png)
+
 TTM is a simple tiling task manager that uses vim/calcurse key bindings.
 
 ### Key Bindings
@@ -15,3 +17,10 @@ TTM is a simple tiling task manager that uses vim/calcurse key bindings.
 - h -> select previous column
 - J -> swap below item
 - K -> swap above item
+
+### Roadmap
+
+- [ ] mouse support
+- [ ] workspaces
+- [ ] responsiviness
+- [ ] schedule notification
