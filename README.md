@@ -25,11 +25,3 @@ Start by adding a new column (press n), and then you can add you items (press a)
 ## Warning
 
 This tool is under development, you may loose any data while using it. None of your data is stored with me, they're all stored in you browser's local storage ( you can clear it by typing 'localStorage.clear()' aat you browser's console.
-
-## Roadmap
-
-- [ ] mouse support
-- [ ] workspaces
-- [ ] themes
-- [ ] responsiviness
-- [ ] schedule notification
